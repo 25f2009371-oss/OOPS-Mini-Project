@@ -4,7 +4,6 @@
 #include <thread>
 using namespace std;
 
-// Linked list Node class
 class Node {
 public:
     int data;
@@ -13,6 +12,7 @@ public:
     Node(int value) {
         data = value;
         next = nullptr;
+        
     }
 };
 
@@ -28,8 +28,5 @@ int main() {
     cout << "Linked List: " << first->data << " -> " 
          << first->next->data << " -> " 
          << first->next->next->data << endl;
-
-    // Student example
-
     return 0;
 }
