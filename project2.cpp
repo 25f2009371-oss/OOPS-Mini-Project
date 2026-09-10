@@ -91,6 +91,25 @@ public:
         return -1;
     }
 
+    bool addAccount(int accNum, string accHolderName, double initialBalance)
+    {
+        if (accNum <= 0 || initialBalance < 0 || findAccount(accNum) != -1)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < 100; i++)
+        {
+            if (accounts[i].getAccountNumber() == 0)
+            {
+                accounts[i] = Account(accNum, accHolderName, initialBalance);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     void displayAllAccounts()
     {
         for (int i = 0; i < 100; i++)
@@ -114,10 +133,11 @@ int main()
     {
         cout << "\n\n========================= Bank Menu =========================\n";
         cout << "1. Show all accounts\n";
-        cout << "2. Show particular account\n";
-        cout << "3. Deposit money\n";
-        cout << "4. Withdraw money\n";
-        cout << "5. Exit\n";
+        cout << "2. Add new account\n";
+        cout << "3. Show particular account\n";
+        cout << "4. Deposit money\n";
+        cout << "5. Withdraw money\n";
+        cout << "6. Exit\n";
         cout << "=============================================================\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -131,6 +151,27 @@ int main()
         case 2:
         {
             int accNum;
+            string accHolderName;
+            double initialBalance;
+
+            cout << "Enter new account number: ";
+            cin >> accNum;
+            cout << "Enter account holder name: ";
+            cin >> ws;
+            getline(cin, accHolderName);
+            cout << "Enter initial balance: ";
+            cin >> initialBalance;
+
+            if (bank.addAccount(accNum, accHolderName, initialBalance))
+                cout << "Account created successfully.\n";
+            else
+                cout << "Unable to create account. Check the account number, balance, or available space.\n";
+            break;
+        }
+
+        case 3:
+        {
+            int accNum;
             cout << "Enter account number: ";
             cin >> accNum;
             int index = bank.findAccount(accNum);
@@ -141,7 +182,7 @@ int main()
             break;
         }
 
-        case 3:
+        case 4:
         {
             int accNum;
             double amount;
@@ -159,7 +200,7 @@ int main()
             break;
         }
 
-        case 4:
+        case 5:
         {
             int accNum;
             double amount;
@@ -177,15 +218,16 @@ int main()
             break;
         }
 
-        case 5:
+        case 6:
             cout << "Exiting program...\n";
             break;
 
         default:
             cout << "Invalid choice. Try again.\n";
+            break;
         }
 
-    } while (choice != 5);
+    } while (choice != 6);
 
     return 0;
 }
