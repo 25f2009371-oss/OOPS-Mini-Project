@@ -2,6 +2,25 @@
 #include <memory>
 using namespace std;
 
+
+
+int add(int a, int b){
+    return a+b;
+}
+
+int add(int a, int b, int c){
+    return a+b+c;
+}
+
+
+double add(double a, double b){
+    return a+b;
+}
+
+
+
+
+
 int main() {
 
     shared_ptr<int> p1 = make_shared<int>(100);
