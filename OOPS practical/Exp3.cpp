@@ -3,7 +3,7 @@ using namespace std;
 inline int sum(int num){
 return num+num;
 }
-void interest(float amount, float rate = 5.1){
+void interest(float amount, float rate = 10.5){
 float si;
 si=(amount*rate)/100;
 cout<<"Simple Interest: "<<si<<endl;
@@ -27,12 +27,12 @@ cout<<"Display the function with two numbers: "<<a<<endl;
 }
 };
 int main(){
-demo myobj;
+demo object;
 
-myobj.display(4);
-myobj.display(4,5);
-myobj.display(4.4);
-myobj.display(5,4.5f);
+object.display(8);
+object.display(9,3);
+object.display(5.4);
+object.display(9,8.3f);
 int n=5;
 cout<<"Inline Function sum: "<<sum(n)<<endl;
 interest(5,5.1f);

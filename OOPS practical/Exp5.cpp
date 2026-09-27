@@ -72,15 +72,15 @@ cout << "-----------------------\n\n";
 
 int main()
 {
-BankAccount myAccount("CHK-12345", "Aditya Tilak Sharma", 500000.00);
+BankAccount myAccount("LM-1949", "Ayush karn", 8959755.00);
 
 myAccount.displayAccountInfo();
 
-myAccount.deposit(8000.0);
-myAccount.withdraw(50000.0);
+myAccount.deposit(5952.0);
+myAccount.withdraw(200000.0);
 
-myAccount.withdraw(90000.0);
-myAccount.deposit(-80000.0);
+myAccount.withdraw(100000.0);
+myAccount.deposit(-50000.0);
 cout << "\nFinal Balance: $" << myAccount.getBalance() << "\n";
 
 return 0;

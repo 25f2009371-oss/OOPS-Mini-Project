@@ -19,14 +19,14 @@ int temp = *a;
 *b = temp;
 }
 int main() {
-int c = 2, d = 3;
+int c = 5, d = 2;
 cout << "Original values: c = " << c << ", d = " << d << endl;
 swapValue(c, d);
 cout << "After swapValue: c = " << c << ", d = " << d << " (unchanged)" << endl;
 swapReference(c, d);
 cout << "After swapReference: c = " << c << ", d = " << d << " (swapped)" << endl;
 // Reset values
-c = 2; d = 3;
+c = 5; d = 2;
 swapAddress(&c, &d);
 cout << "After swapAddress: c = " << c << ", d = " << d << " (swapped)" << endl;
 return 0;

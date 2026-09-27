@@ -12,7 +12,7 @@ int main(){
     auto c= "Name";
     auto d= 'n';
     auto e= true;
-    
+    cout<<endl;
     cout<<"a: "<<a<<endl;
     cout<<"b: "<<b<<endl;
     cout<<"c: "<<c<<endl;
